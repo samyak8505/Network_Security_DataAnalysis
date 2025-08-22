@@ -40,7 +40,7 @@ class DataTransformation:
             logging.info(
                 f"Initialise KNNImputer with {DATA_TRANSFORMATION_IMPUTER_PARAMS} "
             )
-            processor:Pipeline=Pipeline({"imputer",imputer})
+            processor:Pipeline=Pipeline([("imputer",imputer)])
             return processor
         except Exception as e:
             raise NetworkSecurityException(e,sys)
@@ -79,6 +79,8 @@ class DataTransformation:
                 transformed_train_file_path=self.data_transformation_config.transformed_train_file_path,
                 transformed_test_file_path=self.data_transformation_config.transformed_test_file_path            
             )
+
+            return data_transformation_artifact
 
         except Exception as e:
             raise NetworkSecurityException(e,sys)
