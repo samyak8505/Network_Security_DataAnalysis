@@ -8,4 +8,5 @@ scikit-learn
 ipykernel
 dill
 pyaml
+mlflow
 ##-e .
