@@ -52,11 +52,11 @@ jobs:
           ECR_REPOSITORY: ${{secrets.ECR_REPOSITORY_NAME}}
           IMAGE_TAG: latest
     #Build a docker container and push it to ECR so it can be deployes to ECS
-        run:
-          |
+        run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"       
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+   
 
 
 #Whenever code is pushed to main (except README edits), run a job on Ubuntu that checks out the code, lints it, and runs unit tests.
