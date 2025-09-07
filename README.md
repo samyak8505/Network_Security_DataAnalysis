@@ -24,24 +24,6 @@ Libraries: (see requirements.txt) – likely includes Pandas, Scikit-learn, Flas
 
 Deployment: Docker
 
-ML Models: Trained models for network intrusion detection
-
-📂 Project Structure
-├── Network_Data/           # Raw datasets
-├── valid_data/             # Validated datasets
-├── data_schema/            # Schema definitions
-├── final_model/            # Trained ML model(s)
-├── prediction_output/       # Model predictions
-├── networksecurity/        # Core package code
-├── templates/              # Flask HTML templates
-├── app.py                  # Flask app entrypoint
-├── main.py                 # Main pipeline runner
-├── push_data.py            # Data pushing utility
-├── requirements.txt        # Python dependencies
-├── setup.py                # Installation setup
-├── Dockerfile              # Docker build file
-└── README.md               # Project documentation
-
 ⚙️ Installation
 
 Clone the repository:
@@ -70,4 +52,5 @@ python app.py
 
 
 Access at http://localhost:5000
+
 
